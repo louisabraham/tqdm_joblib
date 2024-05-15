@@ -26,3 +26,15 @@ def tqdm_joblib(*args, **kwargs):
     finally:
         joblib.parallel.BatchCompletionCallBack = old_batch_callback
         tqdm_object.close()
+
+
+
+def ParallelPbar(desc=None, **tqdm_kwargs):
+
+    class Parallel(joblib.Parallel):
+        def __call__(self, it):
+            it = list(it)
+            with tqdm_joblib(total=len(it), desc=desc, **tqdm_kwargs):
+                return super().__call__(it)
+
+    return Parallel

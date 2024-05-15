@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="tqdm_joblib",
-    version="0.0.3",
+    version="0.0.4",
     author="Louis Abraham",
     author_email="louis.abraham@yahoo.fr",
     license="CC BY-SA 4.0",

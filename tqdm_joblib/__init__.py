@@ -34,6 +34,9 @@ def ParallelPbar(desc=None, **tqdm_kwargs):
     class Parallel(joblib.Parallel):
         def __call__(self, it):
             it = list(it)
+            if self.n_jobs == 1:
+                it = tqdm(it, desc=desc,**tqdm_kwargs)
+                return super().__call__(it)
             with tqdm_joblib(total=len(it), desc=desc, **tqdm_kwargs):
                 return super().__call__(it)
 

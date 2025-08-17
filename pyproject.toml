@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling", "wheel"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tqdm_joblib"
+version = "0.0.5"
+description = "Tracking progress of joblib.Parallel execution"
+readme = "README.md"
+license = { text = "CC-BY-SA-4.0" }
+authors = [{ name = "Louis Abraham", email = "louis.abraham@yahoo.fr" }]
+dependencies = ["tqdm"]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+"Homepage" = "https://stackoverflow.com/a/58936697/5133167"
+"Repository" = "https://github.com/louisabraham/tqdm_joblib"
+"Bug Tracker" = "https://github.com/louisabraham/tqdm_joblib/issues"
